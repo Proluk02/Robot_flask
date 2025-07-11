@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Serveur Robot{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding-top: 56px;
+      padding-bottom: 50px;
+      background-color: #f9fafb;
+      color: #1f2937;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1050;
+      background-color: #ffffff;
+      border-bottom: 1px solid #e5e7eb;
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-brand {
+      color: #4f46e5;
+      font-weight: bold;
+    }
+
+    .navbar-nav .nav-link {
+      color: #374151;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: #4f46e5;
+    }
+
+    .bottombar {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      z-index: 1050;
+      background-color: #ffffff;
+      border-top: 1px solid #e5e7eb;
+      padding: 8px 16px;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #6b7280;
+    }
+
+    main {
+      min-height: calc(100vh - 106px);
+    }
+  </style>
+</head>
+<body>
+
+<!-- ✅ Topbar -->
+<nav class="navbar navbar-expand-lg navbar-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">🤖 BosseurBot</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav gap-3">
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="bi bi-person-circle"></i> Connexion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-danger" href="#"><i class="bi bi-box-arrow-right"></i> Déconnexion</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ✅ Bottombar -->
+<div class="bottombar">
+  &copy; {{ current_year or "2025" }} Bosseurs AI - Tous droits réservés.
+</div>
+
+<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

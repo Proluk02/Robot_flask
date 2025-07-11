@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Utilisateurs{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+  <h3 class="mb-3">👥 Liste des utilisateurs</h3>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }}">{{ message }}</div>
+    {% endfor %}
+  {% endwith %}
+
+  <table class="table table-bordered table-striped">
+    <thead class="table-light">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Rôle</th>
+        <th>Date d'inscription</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in users %}
+      <tr>
+        <td>{{ user.id }}</td>
+        <td>{{ user.username }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.role }}</td>
+        <td>{{ user.date_created.strftime('%d/%m/%Y') }}</td>
+        <td>
+          {% if user.role != "admin" %}
+          <a href="{{ url_for('delete_user', user_id=user.id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Confirmer la suppression ?')">
+            Supprimer
+          </a>
+          {% else %}
+          <span class="text-muted">Admin</span>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}
