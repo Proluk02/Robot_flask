@@ -1,0 +1,208 @@
+{}
+  {
+    "question": "qu'est-ce qu'une variable",
+    "reponse": {
+      "etapes": {
+        "1": "Une variable est un espace mémoire nommé.",
+        "2": "Elle sert à stocker une valeur dans un programme."
+      },
+      "conclusion": "C’est un élément fondamental en programmation."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'une boucle",
+    "reponse": {
+      "etapes": {
+        "1": "Une boucle permet de répéter un bloc d'instructions.",
+        "2": "Elle continue tant qu'une condition est vraie."
+      },
+      "conclusion": "C’est un concept clé pour la répétition dans les programmes."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'une fonction",
+    "reponse": {
+      "etapes": {
+        "1": "Une fonction est un bloc de code réutilisable.",
+        "2": "Elle effectue une tâche précise."
+      },
+      "conclusion": "Elle permet d'organiser et simplifier le code."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'un algorithme",
+    "reponse": {
+      "etapes": {
+        "1": "Un algorithme est une suite d'étapes.",
+        "2": "Il permet de résoudre un problème de manière logique."
+      },
+      "conclusion": "C’est la base de toute programmation."
+    }
+  },
+  {
+    "question": "différence entre while et for",
+    "reponse": {
+      "etapes": {
+        "1": "La boucle while répète tant qu'une condition est vraie.",
+        "2": "La boucle for est utilisée pour parcourir une séquence ou un intervalle défini."
+      },
+      "conclusion": "Ce sont deux types de boucles adaptées à des cas différents."
+    }
+  },
+  {
+    "question": "comment résoudre une équation",
+    "reponse": {
+      "etapes": {
+        "1": "Isole la variable en effectuant des opérations inverses.",
+        "2": "Applique les mêmes opérations de chaque côté du signe égal."
+      },
+      "conclusion": "Cette méthode permet de trouver la valeur inconnue."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'une fraction",
+    "reponse": {
+      "etapes": {
+        "1": "Une fraction représente une partie d'un tout.",
+        "2": "Elle est composée d'un numérateur et d'un dénominateur."
+      },
+      "conclusion": "Elle exprime une division ou une proportion."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'un adjectif qualificatif",
+    "reponse": {
+      "etapes": {
+        "1": "Un adjectif qualificatif précise un nom.",
+        "2": "Il donne une qualité ou une caractéristique au nom."
+      },
+      "conclusion": "Il enrichit la description dans la phrase."
+    }
+  },
+  {
+    "question": "comment rédiger une introduction",
+    "reponse": {
+      "etapes": {
+        "1": "Présente le sujet clairement.",
+        "2": "Pose une problématique ou question centrale.",
+        "3": "Annonce le plan de ta rédaction."
+      },
+      "conclusion": "L’introduction oriente le lecteur sur le contenu à venir."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'une dissertation",
+    "reponse": {
+      "etapes": {
+        "1": "C’est un texte argumentatif structuré.",
+        "2": "Elle comporte une introduction, un développement et une conclusion."
+      },
+      "conclusion": "La dissertation défend une thèse avec des arguments."
+    }
+  },
+  {
+    "question": "qu'est-ce que la méthode scientifique",
+    "reponse": {
+      "etapes": {
+        "1": "Observation d'un phénomène.",
+        "2": "Formulation d'une hypothèse.",
+        "3": "Expérimentation pour tester l'hypothèse.",
+        "4": "Conclusion basée sur les résultats."
+      },
+      "conclusion": "C’est un processus rigoureux pour valider des connaissances."
+    }
+  },
+  {
+    "question": "comment améliorer sa concentration",
+    "reponse": {
+      "etapes": {
+        "1": "Élimine les distractions autour de toi.",
+        "2": "Fais des pauses régulières.",
+        "3": "Assure-toi de bien dormir."
+      },
+      "conclusion": "Ces pratiques renforcent ta capacité de concentration."
+    }
+  },
+  {
+    "question": "comment faire une bonne présentation orale",
+    "reponse": {
+      "etapes": {
+        "1": "Prépare ton discours à l'avance.",
+        "2": "Structure-le clairement avec une introduction, un développement et une conclusion.",
+        "3": "Répète plusieurs fois pour être à l'aise.",
+        "4": "Parle avec assurance devant ton public."
+      },
+      "conclusion": "Une bonne préparation assure une présentation réussie."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'une phrase complexe",
+    "reponse": {
+      "etapes": {
+        "1": "Elle contient au moins deux propositions.",
+        "2": "Ces propositions sont reliées par subordination ou coordination."
+      },
+      "conclusion": "Elle exprime des idées plus développées qu'une phrase simple."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'une fonction grammaticale",
+    "reponse": {
+      "etapes": {
+        "1": "C’est le rôle d’un mot ou groupe de mots dans la phrase.",
+        "2": "Exemples : sujet, complément d'objet."
+      },
+      "conclusion": "La fonction grammaticale détermine la place et le sens dans la phrase."
+    }
+  },
+  {
+    "question": "comment calculer la moyenne",
+    "reponse": {
+      "etapes": {
+        "1": "Additionne toutes les valeurs.",
+        "2": "Divise le total par le nombre de valeurs."
+      },
+      "conclusion": "La moyenne représente la valeur centrale d'un ensemble."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'un triangle équilatéral",
+    "reponse": {
+      "etapes": {
+        "1": "Il a trois côtés égaux.",
+        "2": "Il a trois angles égaux de 60 degrés."
+      },
+      "conclusion": "C’est un triangle parfaitement symétrique."
+    }
+  },
+  {
+    "question": "qu'est-ce qu'un système d'exploitation",
+    "reponse": {
+      "etapes": {
+        "1": "C’est un logiciel essentiel.",
+        "2": "Il permet à l’ordinateur de fonctionner et gérer ses ressources."
+      },
+      "conclusion": "Sans système d'exploitation, un ordinateur ne peut pas fonctionner."
+    }
+  },
+  {
+    "question": "qu'est-ce que l'intelligence artificielle",
+    "reponse": {
+      "etapes": {
+        "1": "Capacité d'une machine à imiter des fonctions humaines.",
+        "2": "Par exemple : apprentissage, résolution de problèmes."
+      },
+      "conclusion": "L’intelligence artificielle transforme de nombreux domaines."
+    }
+  },
+  {
+    "question": "comment fonctionne internet",
+    "reponse": {
+      "etapes": {
+        "1": "Internet est un réseau mondial d’ordinateurs.",
+        "2": "Les données circulent grâce à des protocoles comme TCP/IP."
+      },
+      "conclusion": "Internet permet la communication et l’échange d’informations partout dans le monde."
+    }
+  }
+}

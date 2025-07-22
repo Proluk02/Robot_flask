@@ -1,0 +1,155 @@
+{
+  "etapes": {
+    "1": {
+      "question": "Bonjour, quel logiciel ou système souhaitez-vous installer ? (ex : Windows, Word, Python, Android Studio...)",
+      "analyse_logiciel": true,
+      "redirection": {
+        "windows": "2",
+        "word": "3",
+        "chrome": "4",
+        "python": "5",
+        "vscode": "6",
+        "zoom": "7",
+        "whatsapp": "8",
+        "android studio": "9",
+        "xampp": "10",
+        "postgresql": "11",
+        "mysql": "12",
+        "node.js": "13",
+        "java": "14",
+        "docker": "15",
+        "github desktop": "16",
+        "notepad++": "17",
+        "vlc": "18",
+        "skype": "19",
+        "wamp": "20",
+        "adobe reader": "21"
+      },
+      "defaut": "99"
+    },
+
+    "2": {
+      "question": "Pour installer Windows, avez-vous une clé USB bootable ?",
+      "reponses_utilisateur": {
+        "oui": "2a",
+        "non": "2b"
+      }
+    },
+    "2a": {
+      "question": "Redémarrez l’ordinateur, entrez dans le BIOS (F2/Del), choisissez la clé USB comme périphérique de démarrage, puis suivez l’assistant d’installation.",
+      "produits_recommandes": ["Image ISO Windows", "Rufus pour créer USB bootable"],
+      "conseils": "Assurez-vous de sauvegarder vos données avant d’installer.",
+      "fin": true
+    },
+    "2b": {
+      "question": "Téléchargez l’outil de création de média Windows sur le site officiel, insérez une clé USB de 8Go+, et suivez les instructions.",
+      "produits_recommandes": ["Outil MediaCreationTool"],
+      "conseils": "Utilisez Rufus pour graver l’image ISO sur une clé USB.",
+      "fin": true
+    },
+
+    "3": {
+      "question": "Téléchargez Microsoft Word via Office.com ou installez Microsoft 365.",
+      "produits_recommandes": ["Microsoft Office Installer"],
+      "conseils": "Une licence est requise pour activer Word.",
+      "fin": true
+    },
+
+    "4": {
+      "question": "Rendez-vous sur google.com/chrome, téléchargez le fichier .exe, puis double-cliquez pour lancer l’installation.",
+      "fin": true
+    },
+
+    "5": {
+      "question": "Allez sur python.org, téléchargez la version adaptée à votre système, cochez 'Add Python to PATH' puis installez.",
+      "fin": true
+    },
+
+    "6": {
+      "question": "Téléchargez Visual Studio Code depuis code.visualstudio.com puis installez. Ajoutez les extensions nécessaires (Python, HTML...).",
+      "fin": true
+    },
+
+    "7": {
+      "question": "Visitez zoom.us/download et téléchargez le client Zoom pour votre système. Lancez l’installation.",
+      "fin": true
+    },
+
+    "8": {
+      "question": "Pour WhatsApp Desktop, allez sur whatsapp.com/download, téléchargez puis installez. Scannez le QR code avec votre téléphone.",
+      "fin": true
+    },
+
+    "9": {
+      "question": "Téléchargez Android Studio via developer.android.com. Installez avec tous les composants (SDK, AVD...).",
+      "produits_recommandes": ["JDK", "Android SDK"],
+      "conseils": "Assurez-vous que JAVA_HOME est bien configuré.",
+      "fin": true
+    },
+
+    "10": {
+      "question": "Allez sur apachefriends.org, téléchargez XAMPP, exécutez l’installation et démarrez Apache et MySQL depuis le panneau de contrôle.",
+      "fin": true
+    },
+
+    "11": {
+      "question": "Téléchargez PostgreSQL depuis postgresql.org. Pendant l’installation, définissez un mot de passe pour l’utilisateur 'postgres'.",
+      "fin": true
+    },
+
+    "12": {
+      "question": "Allez sur dev.mysql.com, choisissez l’installer communautaire et suivez les étapes.",
+      "fin": true
+    },
+
+    "13": {
+      "question": "Visitez nodejs.org, téléchargez LTS version, installez et vérifiez avec 'node -v' dans le terminal.",
+      "fin": true
+    },
+
+    "14": {
+      "question": "Installez le JDK depuis oracle.com ou adoptium.net. Configurez JAVA_HOME dans les variables d’environnement.",
+      "fin": true
+    },
+
+    "15": {
+      "question": "Téléchargez Docker Desktop depuis docker.com. Activez la virtualisation dans le BIOS si nécessaire.",
+      "fin": true
+    },
+
+    "16": {
+      "question": "Rendez-vous sur desktop.github.com, téléchargez l’application, connectez-vous avec votre compte GitHub.",
+      "fin": true
+    },
+
+    "17": {
+      "question": "Téléchargez Notepad++ depuis notepad-plus-plus.org puis installez.",
+      "fin": true
+    },
+
+    "18": {
+      "question": "Visitez videolan.org/vlc, téléchargez VLC puis suivez l’assistant d’installation.",
+      "fin": true
+    },
+
+    "19": {
+      "question": "Téléchargez Skype via skype.com, installez et connectez-vous à votre compte.",
+      "fin": true
+    },
+
+    "20": {
+      "question": "Téléchargez WAMP depuis wampserver.com. Installez, puis démarrez les services Apache et MySQL.",
+      "fin": true
+    },
+
+    "21": {
+      "question": "Téléchargez Adobe Reader depuis adobe.com pour ouvrir les fichiers PDF. Suivez les instructions d’installation.",
+      "fin": true
+    },
+
+    "99": {
+      "question": "Je n’ai pas reconnu ce logiciel. Pouvez-vous reformuler ou préciser ?",
+      "reponses_utilisateur": {}
+    }
+  }
+}

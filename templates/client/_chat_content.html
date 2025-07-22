@@ -1,0 +1,144 @@
+<style>
+  .chat-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    border-radius: 12px;
+    background: #f8f9fa;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .chat-box {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border-radius: 10px;
+    background: #ffffff;
+  }
+
+  .bubble {
+    padding: 10px 15px;
+    border-radius: 20px;
+    max-width: 70%;
+    margin-bottom: 12px;
+    position: relative;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    word-wrap: break-word;
+  }
+
+  .client {
+    background-color: #d1e7dd;
+    align-self: flex-end;
+  }
+
+  .robot {
+    background-color: #e2e3e5;
+    align-self: flex-start;
+  }
+
+  .message-input {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .message-input textarea {
+    flex: 1;
+    resize: none;
+  }
+
+  .domain-links {
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .domain-links a {
+    margin: 0 10px;
+    font-weight: bold;
+    color: #0d6efd;
+    text-decoration: none;
+  }
+
+  .domain-links a:hover {
+    text-decoration: underline;
+  }
+
+  .scroll-to-bottom {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 50%;
+    padding: 10px 12px;
+    font-size: 18px;
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+  }
+</style>
+
+<div class="chat-container">
+  <div class="domain-links">
+    <a href="{{ url_for('chat') }}">Général</a> |
+    <a href="{{ url_for('enseignement_chat') }}">Enseignement</a> |
+    <a href="{{ url_for('consultation_chat') }}">Consultation</a> |
+    <a href="{{ url_for('installation_chat') }}">Installation</a> |
+    <a href="{{ url_for('entretien_chat') }}">Entretien</a> |
+    <a href="{{ url_for('achats_chat') }}">Achats</a>
+  </div>
+
+  <div class="chat-box" id="chat-box">
+    {% for msg in messages[-20:] %}
+      <!-- Message utilisateur -->
+      <div class="d-flex justify-content-end" role="article" aria-label="Message utilisateur">
+        <div class="bubble client">
+          <strong>Vous :</strong> {{ msg.contenu }}
+        </div>
+      </div>
+
+      <!-- Réponse robot -->
+      {% if msg.reponse %}
+      <div class="d-flex justify-content-start" role="article" aria-label="Réponse IA">
+        <div class="bubble robot">
+          <strong>Robot :</strong> {{ msg.reponse }}
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  <form method="POST" class="message-input">
+    <textarea name="message" class="form-control" rows="2" placeholder="Écrivez un message..." required></textarea>
+    <button type="submit" class="btn btn-primary">Envoyer</button>
+  </form>
+</div>
+
+<div id="scrollButton" class="scroll-to-bottom" title="Aller en bas">
+  ⬇
+</div>
+
+<script>
+  const chatBox = document.getElementById("chat-box");
+  const scrollButton = document.getElementById("scrollButton");
+
+  function scrollToBottom() {
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
+
+  scrollToBottom();
+
+  chatBox.addEventListener("scroll", function () {
+    if (chatBox.scrollHeight - chatBox.scrollTop > chatBox.clientHeight + 100) {
+      scrollButton.style.display = "block";
+    } else {
+      scrollButton.style.display = "none";
+    }
+  });
+
+  scrollButton.addEventListener("click", scrollToBottom);
+</script>

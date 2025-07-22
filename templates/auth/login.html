@@ -2,27 +2,43 @@
 {% block title %}Connexion{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-  <div class="row justify-content-center">
-    <div class="col-md-5">
-      <h3 class="mb-4 text-center">🔐 Connexion</h3>
-      {% with messages = get_flashed_messages(with_categories=true) %}
-        {% for category, message in messages %}
-          <div class="alert alert-{{ category }}">{{ message }}</div>
-        {% endfor %}
-      {% endwith %}
-      <form method="POST">
-        <div class="mb-3">
-          <label>Email</label>
-          <input type="email" name="email" class="form-control" placeholder="Entrez votre email" required>
-        </div>
-        <div class="mb-3">
-          <label>Mot de passe</label>
-          <input type="password" name="password" class="form-control" placeholder="Entrez votre mot de passe" required>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">Connexion</button>
-      </form>
-      <p class="mt-3 text-center">Pas encore inscrit ? <a href="{{ url_for('register') }}">Créer un compte</a></p>
+<div class="container d-flex align-items-center justify-content-center min-vh-100">
+  <div class="col-md-6 col-lg-5">
+    <div class="card shadow-lg border-0 rounded-4 p-4">
+      <div class="card-body">
+        <h3 class="text-center mb-4">
+          <i class="bi bi-shield-lock-fill text-primary me-2"></i>Connexion
+        </h3>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          {% endfor %}
+        {% endwith %}
+
+        <form method="POST" class="needs-validation" novalidate>
+          <div class="form-floating mb-3">
+            <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" required>
+            <label for="email">Adresse Email</label>
+          </div>
+
+          <div class="form-floating mb-4">
+            <input type="password" name="password" class="form-control" id="password" placeholder="Mot de passe" required>
+            <label for="password">Mot de passe</label>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-100 py-2 rounded-3">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Se connecter
+          </button>
+        </form>
+
+        <p class="mt-4 mb-0 text-center">
+          Pas encore inscrit ? <a href="{{ url_for('register') }}" class="text-decoration-none fw-semibold">Créer un compte</a>
+        </p>
+      </div>
     </div>
   </div>
 </div>

@@ -1,0 +1,125 @@
+{
+  "etapes": {
+    "1": {
+      "question": "Bonjour, quel type d'achat souhaitez-vous faire ? (ex : produit électronique, vêtement, alimentation, service, autre)",
+      "analyse_achat": true,
+      "redirection": {
+        "électronique": "2",
+        "vêtement": "3",
+        "alimentation": "4",
+        "service": "5",
+        "autre": "6"
+      },
+      "defaut": "99"
+    },
+
+    "2": {
+      "question": "Pour l'électronique, cherchez-vous un smartphone, un ordinateur ou un accessoire ?",
+      "reponses_utilisateur": {
+        "smartphone": "10",
+        "ordinateur": "11",
+        "accessoire": "12"
+      }
+    },
+
+    "3": {
+      "question": "Pour les vêtements, souhaitez-vous un haut, un bas ou des chaussures ?",
+      "reponses_utilisateur": {
+        "haut": "13",
+        "bas": "14",
+        "chaussures": "15"
+      }
+    },
+
+    "4": {
+      "question": "Pour l'alimentation, cherchez-vous des produits frais, secs ou boissons ?",
+      "reponses_utilisateur": {
+        "frais": "16",
+        "secs": "17",
+        "boissons": "18"
+      }
+    },
+
+    "5": {
+      "question": "Pour un service, s'agit-il d'un abonnement, d'une prestation ponctuelle ou d'une consultation ?",
+      "reponses_utilisateur": {
+        "abonnement": "19",
+        "prestation ponctuelle": "20",
+        "consultation": "21"
+      }
+    },
+
+    "6": {
+      "question": "Pouvez-vous préciser quel type d'achat vous souhaitez ?",
+      "reponses_utilisateur": {}
+    },
+
+    "10": {
+      "question": "Pour un smartphone, préférez-vous une marque ou un budget particulier ?",
+      "conseils": "Comparez les caractéristiques et lisez les avis avant d’acheter.",
+      "fin": true
+    },
+
+    "11": {
+      "question": "Pour un ordinateur, avez-vous besoin d’un usage bureautique, gaming ou professionnel ?",
+      "conseils": "Choisissez selon vos besoins de performance et de mobilité.",
+      "fin": true
+    },
+
+    "12": {
+      "question": "Pour les accessoires électroniques, cherchez-vous des écouteurs, chargeurs ou autres ?",
+      "fin": true
+    },
+
+    "13": {
+      "question": "Pour les hauts, préférez-vous un style décontracté, formel ou sportif ?",
+      "fin": true
+    },
+
+    "14": {
+      "question": "Pour les bas, cherchez-vous des jeans, pantalons ou shorts ?",
+      "fin": true
+    },
+
+    "15": {
+      "question": "Pour les chaussures, avez-vous une préférence pour des baskets, sandales ou bottes ?",
+      "fin": true
+    },
+
+    "16": {
+      "question": "Pour les produits frais, vérifiez toujours la date de péremption et la qualité.",
+      "conseils": "Privilégiez les circuits courts pour plus de fraîcheur.",
+      "fin": true
+    },
+
+    "17": {
+      "question": "Pour les produits secs, assurez-vous du bon stockage et de la conservation.",
+      "fin": true
+    },
+
+    "18": {
+      "question": "Pour les boissons, préférez-vous alcoolisées ou non alcoolisées ?",
+      "fin": true
+    },
+
+    "19": {
+      "question": "Pour un abonnement, vérifiez les conditions de résiliation et la durée d'engagement.",
+      "fin": true
+    },
+
+    "20": {
+      "question": "Pour une prestation ponctuelle, demandez un devis clair avant la commande.",
+      "fin": true
+    },
+
+    "21": {
+      "question": "Pour une consultation, assurez-vous que le professionnel est qualifié et reconnu.",
+      "fin": true
+    },
+
+    "99": {
+      "question": "Je n’ai pas compris votre demande. Pouvez-vous préciser le type d'achat ?",
+      "reponses_utilisateur": {}
+    }
+  }
+}

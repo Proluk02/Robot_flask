@@ -1,6 +1,6 @@
 {% extends "base.html" %}
-{% block title %}Bosseurs - Accueil{% endblock %}
+{% block title %}Bosseurs - Installation{% endblock %}
 {% block content %}
-<!-- Copie identique, lien actif sur "Chat" -->
+{% set current_page = 'installation' %}
 {% include "client/_chat_content.html" with context %}
 {% endblock %}

@@ -1,0 +1,306 @@
+{
+  "etapes": {
+    "1": {
+      "question": "Bonjour, quels sont vos symptômes ? (ex: fièvre, toux, maux de tête, fatigue, nausées, diarrhée, éruptions, etc.)",
+      "analyse_symptomes": true,
+      "redirection": {
+        "fièvre": "2",
+        "toux": "10",
+        "maux de tête": "20",
+        "fatigue": "30",
+        "nausées": "40",
+        "diarrhée": "50",
+        "éruptions": "60",
+        "vomissements": "70",
+        "douleurs abdominales": "80",
+        "perte de goût": "90",
+        "perte d'odorat": "91",
+        "vertiges": "92",
+        "essoufflement": "93",
+        "douleurs thoraciques": "94",
+        "saignements": "95",
+        "tremblements": "96",
+        "tensions musculaires": "97",
+        "insomnie": "98",
+        "brûlures urinaires": "99",
+        "gorge irritée": "100"
+      },
+      "defaut": "199"
+    },
+
+    "2": {
+      "question": "Avez-vous des frissons ou douleurs musculaires ?",
+      "reponses_utilisateur": {
+        "oui": "3",
+        "non": "4"
+      }
+    },
+    "3": {
+      "question": "Syndrome grippal probable.",
+      "produits_recommandes": ["Paracétamol", "Infusion gingembre", "Repos"],
+      "conseils": "Surveillez la température et consultez si ça s'aggrave.",
+      "fin": true
+    },
+    "4": {
+      "question": "Avez-vous voyagé dans une zone à risque de paludisme ?",
+      "reponses_utilisateur": {
+        "oui": "5",
+        "non": "6"
+      }
+    },
+    "5": {
+      "question": "Suspicion de paludisme.",
+      "produits_recommandes": ["TDR paludisme", "Traitement antipaludique"],
+      "conseils": "Consultez rapidement un centre de santé.",
+      "fin": true
+    },
+    "6": {
+      "question": "Fièvre bénigne possible.",
+      "produits_recommandes": ["Paracétamol", "Hydratation"],
+      "conseils": "Surveillez l’évolution des symptômes.",
+      "fin": true
+    },
+
+    "10": {
+      "question": "Votre toux est-elle sèche ou grasse ?",
+      "reponses_utilisateur": {
+        "sèche": "11",
+        "grasse": "12"
+      }
+    },
+    "11": {
+      "question": "Toux sèche probable, souvent virale ou allergique.",
+      "produits_recommandes": ["Sirop antitussif", "Miel-citron"],
+      "conseils": "Évitez les environnements irritants.",
+      "fin": true
+    },
+    "12": {
+      "question": "Toux grasse, possible bronchite.",
+      "produits_recommandes": ["Expectorant", "Hydratation"],
+      "conseils": "Consultez si cela persiste plus de 3 jours.",
+      "fin": true
+    },
+
+    "20": {
+      "question": "Avez-vous une sensibilité à la lumière ou nausées ?",
+      "reponses_utilisateur": {
+        "oui": "21",
+        "non": "22"
+      }
+    },
+    "21": {
+      "question": "Probable migraine ou début de méningite.",
+      "produits_recommandes": ["Paracétamol", "Repos au calme"],
+      "conseils": "Consultez si les symptômes s’aggravent.",
+      "fin": true
+    },
+    "22": {
+      "question": "Céphalée légère due à fatigue ou stress.",
+      "produits_recommandes": ["Hydratation", "Repos"],
+      "conseils": "Diminuez les écrans et reposez-vous.",
+      "fin": true
+    },
+
+    "30": {
+      "question": "La fatigue est-elle chronique ?",
+      "reponses_utilisateur": {
+        "oui": "31",
+        "non": "32"
+      }
+    },
+    "31": {
+      "question": "Fatigue chronique, possible carence.",
+      "produits_recommandes": ["Compléments en fer ou B12"],
+      "conseils": "Faites un bilan médical si ça persiste.",
+      "fin": true
+    },
+    "32": {
+      "question": "Fatigue passagère.",
+      "produits_recommandes": ["Repos", "Bonne alimentation"],
+      "conseils": "Récupérez bien et dormez suffisamment.",
+      "fin": true
+    },
+
+    "40": {
+      "question": "Nausées accompagnées de vomissements ?",
+      "reponses_utilisateur": {
+        "oui": "41",
+        "non": "42"
+      }
+    },
+    "41": {
+      "question": "Trouble digestif probable.",
+      "produits_recommandes": ["Antinauséeux", "Régime léger"],
+      "conseils": "Hydratez-vous et évitez les aliments lourds.",
+      "fin": true
+    },
+    "42": {
+      "question": "Nausées légères passagères.",
+      "produits_recommandes": ["Infusion menthe", "Repos"],
+      "conseils": "Consultez si les nausées persistent.",
+      "fin": true
+    },
+
+    "50": {
+      "question": "Depuis combien de temps avez-vous la diarrhée ?",
+      "reponses_utilisateur": {
+        "moins de 2 jours": "51",
+        "plus de 2 jours": "52"
+      }
+    },
+    "51": {
+      "question": "Probable indigestion.",
+      "produits_recommandes": ["Solution de réhydratation", "Riz blanc"],
+      "conseils": "Buvez régulièrement.",
+      "fin": true
+    },
+    "52": {
+      "question": "Diarrhée prolongée, possible infection.",
+      "produits_recommandes": ["SRO", "Consultation médicale"],
+      "conseils": "Consultez rapidement.",
+      "fin": true
+    },
+
+    "60": {
+      "question": "Les éruptions démangent-elles ?",
+      "reponses_utilisateur": {
+        "oui": "61",
+        "non": "62"
+      }
+    },
+    "61": {
+      "question": "Allergie cutanée probable.",
+      "produits_recommandes": ["Crème antihistaminique", "Éviter l’allergène"],
+      "conseils": "Si l’éruption se propage, consultez.",
+      "fin": true
+    },
+    "62": {
+      "question": "Éruption bénigne, peut être virale.",
+      "produits_recommandes": ["Désinfectant", "Hydratation cutanée"],
+      "conseils": "Surveillez si de la fièvre s’ajoute.",
+      "fin": true
+    },
+
+    "70": {
+      "question": "Vomissements fréquents ou isolés ?",
+      "reponses_utilisateur": {
+        "fréquents": "71",
+        "isolés": "72"
+      }
+    },
+    "71": {
+      "question": "Probable intoxication alimentaire.",
+      "produits_recommandes": ["Charbon actif", "Hydratation"],
+      "conseils": "Ne pas consommer d’aliments suspects.",
+      "fin": true
+    },
+    "72": {
+      "question": "Symptôme bénin possible.",
+      "produits_recommandes": ["Repos", "Petits repas légers"],
+      "conseils": "Surveillez l’évolution.",
+      "fin": true
+    },
+
+    "80": {
+      "question": "Douleurs localisées ou diffuses ?",
+      "reponses_utilisateur": {
+        "localisées": "81",
+        "diffuses": "82"
+      }
+    },
+    "81": {
+      "question": "Possible colique ou gastrite.",
+      "produits_recommandes": ["Spasfon", "Régime doux"],
+      "conseils": "Consultez si douleurs intenses.",
+      "fin": true
+    },
+    "82": {
+      "question": "Douleurs digestives légères.",
+      "produits_recommandes": ["Infusion camomille", "Hydratation"],
+      "conseils": "Évitez les aliments irritants.",
+      "fin": true
+    },
+
+    "90": {
+      "question": "Perte de goût soudaine ?",
+      "reponses_utilisateur": {
+        "oui": "91",
+        "non": "6"
+      }
+    },
+    "91": {
+      "question": "Symptôme du COVID-19 possible.",
+      "produits_recommandes": ["Test COVID-19", "Isolement"],
+      "conseils": "Faites un test dès que possible.",
+      "fin": true
+    },
+
+    "92": {
+      "question": "Vertiges fréquents ?",
+      "produits_recommandes": ["Repos", "Sucre rapide"],
+      "conseils": "Consultez si cela revient souvent.",
+      "fin": true
+    },
+
+    "93": {
+      "question": "Essoufflement au repos ?",
+      "produits_recommandes": ["Consultation urgente"],
+      "conseils": "Peut être lié au cœur ou aux poumons.",
+      "fin": true
+    },
+
+    "94": {
+      "question": "Douleur aiguë dans la poitrine ?",
+      "produits_recommandes": ["Urgence médicale"],
+      "conseils": "Consultez immédiatement.",
+      "fin": true
+    },
+
+    "95": {
+      "question": "Saignement inhabituel détecté ?",
+      "produits_recommandes": ["Consultation rapide"],
+      "conseils": "Ne tardez pas à consulter.",
+      "fin": true
+    },
+
+    "96": {
+      "question": "Tremblements persistants ?",
+      "produits_recommandes": ["Glucose", "Repos"],
+      "conseils": "Peut être lié à une hypoglycémie.",
+      "fin": true
+    },
+
+    "97": {
+      "question": "Tensions musculaires après activité ?",
+      "produits_recommandes": ["Massage", "Baume chauffant"],
+      "conseils": "Repos et hydratation.",
+      "fin": true
+    },
+
+    "98": {
+      "question": "Insomnie depuis combien de jours ?",
+      "produits_recommandes": ["Tisane relaxante", "Éviter les écrans"],
+      "conseils": "Essayez une routine de sommeil.",
+      "fin": true
+    },
+
+    "99": {
+      "question": "Brûlures lors de la miction ?",
+      "produits_recommandes": ["Beaucoup d’eau", "Consultation si persiste"],
+      "conseils": "Possible infection urinaire.",
+      "fin": true
+    },
+
+    "100": {
+      "question": "Gorge irritée avec toux ?",
+      "produits_recommandes": ["Pastilles", "Infusion miel-citron"],
+      "conseils": "Gargarisme à l’eau salée tiède.",
+      "fin": true
+    },
+
+    "199": {
+      "question": "Merci de préciser un symptôme parmi : fièvre, toux, maux de tête, fatigue, etc.",
+      "reponses_utilisateur": {}
+    }
+  }
+}
