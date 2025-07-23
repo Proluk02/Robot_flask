@@ -4,25 +4,41 @@
 {% block content %}
 <div class="container py-4">
   <div class="card shadow-sm border-0">
-    <div class="card-header bg-light d-flex justify-content-between align-items-center">
-      <h5 class="mb-0">Assistant Intelligent</h5>
-      <span class="badge bg-primary text-uppercase">
-        {{ session.get('domaine', 'Non défini') }}
-      </span>
+
+    <!-- En-tête du chat -->
+    <div class="card-header bg-light d-flex justify-content-between align-items-center flex-wrap">
+      <h5 class="mb-0 fw-bold"><i class="bi bi-robot me-2"></i>Assistant Intelligent</h5>
+      <div class="d-flex align-items-center flex-wrap">
+        <span class="badge bg-primary text-uppercase me-3">
+          {{ session.get('domaine', 'Non défini') }}
+        </span>
+        <form action="{{ url_for('nouveau_chat') }}" method="post" class="d-inline me-2">
+          <button type="submit" class="btn btn-sm btn-outline-danger" title="Nouveau chat">
+            <i class="bi bi-arrow-clockwise"></i> Nouveau chat
+          </button>
+        </form>
+        <a href="{{ url_for('refresh') }}" class="btn btn-sm btn-outline-secondary me-2" title="Refresh">
+          <i class="bi bi-arrow-repeat"></i> Refresh
+        </a>
+        <a href="{{ url_for('changer_domaine') }}" class="btn btn-sm btn-outline-warning" title="Changer de domaine">
+          <i class="bi bi-arrow-left-circle"></i> Changer domaine
+        </a>
+      </div>
     </div>
 
-    <div class="card-body" style="max-height: 60vh; overflow-y: auto;" id="chat-box">
+    <!-- Corps du chat -->
+    <div class="card-body bg-white" style="max-height: 60vh; overflow-y: auto;" id="chat-box">
       {% for message in messages %}
         <div class="mb-3">
           {% if message.sender == 'client' %}
             <div class="text-end">
-              <div class="d-inline-block bg-primary text-white p-2 rounded">
+              <div class="d-inline-block bg-primary text-white p-2 rounded-pill px-3 shadow-sm">
                 {{ message.content }}
               </div>
             </div>
           {% elif message.sender == 'robot' %}
             <div class="text-start">
-              <div class="d-inline-block bg-light border p-3 rounded">
+              <div class="d-inline-block bg-light border p-3 rounded shadow-sm">
                 {% if message.content is mapping and message.content.etapes %}
                   <ul class="mb-1 ps-3">
                     {% for key, etape in message.content.etapes.items() %}
@@ -42,16 +58,21 @@
       {% endfor %}
     </div>
 
-    <div class="card-footer bg-white">
+    <!-- Formulaire d'envoi -->
+    <div class="card-footer bg-white border-top">
       <form method="post" class="d-flex">
-        <input type="text" name="message" class="form-control me-2" placeholder="Écrivez votre message..." required autofocus>
-        <button type="submit" class="btn btn-success">Envoyer</button>
+        <input type="text" name="message" class="form-control me-2 rounded-pill shadow-sm" placeholder="Écrivez votre message..." required autofocus>
+        <button type="submit" class="btn btn-success rounded-pill px-4 shadow-sm">
+          <i class="bi bi-send-fill"></i> Envoyer
+        </button>
       </form>
     </div>
+
   </div>
 </div>
 
 <script>
+  // Scroll automatique en bas
   const chatBox = document.getElementById('chat-box');
   chatBox.scrollTop = chatBox.scrollHeight;
 </script>
