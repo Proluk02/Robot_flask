@@ -1,4 +1,4 @@
-{
+[
   "etapes": {
     "1": {
       "question": "Bonjour, quel logiciel ou système souhaitez-vous installer ? (ex : Windows, Word, Python, Android Studio...)",
@@ -152,4 +152,4 @@
       "reponses_utilisateur": {}
     }
   }
-}
+]

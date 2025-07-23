@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}Bosseurs - Chat{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="card shadow-sm border-0">
+    <div class="card-header bg-light d-flex justify-content-between align-items-center">
+      <h5 class="mb-0">Assistant Intelligent</h5>
+      <span class="badge bg-primary text-uppercase">
+        {{ session.get('domaine', 'Non défini') }}
+      </span>
+    </div>
+
+    <div class="card-body" style="max-height: 60vh; overflow-y: auto;" id="chat-box">
+      {% for message in messages %}
+        <div class="mb-3">
+          {% if message.sender == 'client' %}
+            <div class="text-end">
+              <div class="d-inline-block bg-primary text-white p-2 rounded">
+                {{ message.content }}
+              </div>
+            </div>
+          {% elif message.sender == 'robot' %}
+            <div class="text-start">
+              <div class="d-inline-block bg-light border p-3 rounded">
+                {% if message.content is mapping and message.content.etapes %}
+                  <ul class="mb-1 ps-3">
+                    {% for key, etape in message.content.etapes.items() %}
+                      <li><strong>Étape {{ key }} :</strong> {{ etape }}</li>
+                    {% endfor %}
+                  </ul>
+                  {% if message.content.conclusion %}
+                    <p class="mb-0"><em>{{ message.content.conclusion }}</em></p>
+                  {% endif %}
+                {% else %}
+                  <p class="mb-0">{{ message.content }}</p>
+                {% endif %}
+              </div>
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+
+    <div class="card-footer bg-white">
+      <form method="post" class="d-flex">
+        <input type="text" name="message" class="form-control me-2" placeholder="Écrivez votre message..." required autofocus>
+        <button type="submit" class="btn btn-success">Envoyer</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+  const chatBox = document.getElementById('chat-box');
+  chatBox.scrollTop = chatBox.scrollHeight;
+</script>
+{% endblock %}

@@ -1,4 +1,4 @@
-{}
+[
   {
     "question": "qu'est-ce qu'une variable",
     "reponse": {
@@ -205,4 +205,4 @@
       "conclusion": "Internet permet la communication et l’échange d’informations partout dans le monde."
     }
   }
-}
+]

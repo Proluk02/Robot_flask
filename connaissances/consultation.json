@@ -27,7 +27,6 @@
       },
       "defaut": "199"
     },
-
     "2": {
       "question": "Avez-vous des frissons ou douleurs musculaires ?",
       "reponses_utilisateur": {
@@ -60,7 +59,6 @@
       "conseils": "Surveillez l’évolution des symptômes.",
       "fin": true
     },
-
     "10": {
       "question": "Votre toux est-elle sèche ou grasse ?",
       "reponses_utilisateur": {
@@ -80,7 +78,6 @@
       "conseils": "Consultez si cela persiste plus de 3 jours.",
       "fin": true
     },
-
     "20": {
       "question": "Avez-vous une sensibilité à la lumière ou nausées ?",
       "reponses_utilisateur": {
@@ -100,7 +97,6 @@
       "conseils": "Diminuez les écrans et reposez-vous.",
       "fin": true
     },
-
     "30": {
       "question": "La fatigue est-elle chronique ?",
       "reponses_utilisateur": {
@@ -120,7 +116,6 @@
       "conseils": "Récupérez bien et dormez suffisamment.",
       "fin": true
     },
-
     "40": {
       "question": "Nausées accompagnées de vomissements ?",
       "reponses_utilisateur": {
@@ -140,7 +135,6 @@
       "conseils": "Consultez si les nausées persistent.",
       "fin": true
     },
-
     "50": {
       "question": "Depuis combien de temps avez-vous la diarrhée ?",
       "reponses_utilisateur": {
@@ -160,7 +154,6 @@
       "conseils": "Consultez rapidement.",
       "fin": true
     },
-
     "60": {
       "question": "Les éruptions démangent-elles ?",
       "reponses_utilisateur": {
@@ -180,7 +173,6 @@
       "conseils": "Surveillez si de la fièvre s’ajoute.",
       "fin": true
     },
-
     "70": {
       "question": "Vomissements fréquents ou isolés ?",
       "reponses_utilisateur": {
@@ -200,7 +192,6 @@
       "conseils": "Surveillez l’évolution.",
       "fin": true
     },
-
     "80": {
       "question": "Douleurs localisées ou diffuses ?",
       "reponses_utilisateur": {
@@ -220,7 +211,6 @@
       "conseils": "Évitez les aliments irritants.",
       "fin": true
     },
-
     "90": {
       "question": "Perte de goût soudaine ?",
       "reponses_utilisateur": {
@@ -234,70 +224,60 @@
       "conseils": "Faites un test dès que possible.",
       "fin": true
     },
-
     "92": {
       "question": "Vertiges fréquents ?",
       "produits_recommandes": ["Repos", "Sucre rapide"],
       "conseils": "Consultez si cela revient souvent.",
       "fin": true
     },
-
     "93": {
       "question": "Essoufflement au repos ?",
       "produits_recommandes": ["Consultation urgente"],
       "conseils": "Peut être lié au cœur ou aux poumons.",
       "fin": true
     },
-
     "94": {
       "question": "Douleur aiguë dans la poitrine ?",
       "produits_recommandes": ["Urgence médicale"],
       "conseils": "Consultez immédiatement.",
       "fin": true
     },
-
     "95": {
       "question": "Saignement inhabituel détecté ?",
       "produits_recommandes": ["Consultation rapide"],
       "conseils": "Ne tardez pas à consulter.",
       "fin": true
     },
-
     "96": {
       "question": "Tremblements persistants ?",
       "produits_recommandes": ["Glucose", "Repos"],
       "conseils": "Peut être lié à une hypoglycémie.",
       "fin": true
     },
-
     "97": {
       "question": "Tensions musculaires après activité ?",
       "produits_recommandes": ["Massage", "Baume chauffant"],
       "conseils": "Repos et hydratation.",
       "fin": true
     },
-
     "98": {
       "question": "Insomnie depuis combien de jours ?",
       "produits_recommandes": ["Tisane relaxante", "Éviter les écrans"],
       "conseils": "Essayez une routine de sommeil.",
       "fin": true
     },
-
     "99": {
       "question": "Brûlures lors de la miction ?",
       "produits_recommandes": ["Beaucoup d’eau", "Consultation si persiste"],
       "conseils": "Possible infection urinaire.",
       "fin": true
     },
-
     "100": {
       "question": "Gorge irritée avec toux ?",
       "produits_recommandes": ["Pastilles", "Infusion miel-citron"],
       "conseils": "Gargarisme à l’eau salée tiède.",
       "fin": true
     },
-
     "199": {
       "question": "Merci de préciser un symptôme parmi : fièvre, toux, maux de tête, fatigue, etc.",
       "reponses_utilisateur": {}

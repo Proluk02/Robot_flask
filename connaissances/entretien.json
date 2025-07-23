@@ -1,437 +1,538 @@
-{
-  "etapes": {
-    "1": {
-      "question": "Bonjour, quel type d'entretien souhaitez-vous réaliser ? (ex : voiture, climatiseur, chaudière, piscine, jardin...)",
-      "analyse_entretien": true,
-      "redirection": {
-        "voiture": "2",
-        "climatiseur": "3",
-        "chaudière": "4",
-        "piscine": "5",
-        "jardin": "6",
-        "ordinateur": "7",
-        "chauffe-eau": "8",
-        "toiture": "9",
-        "ascenseur": "10",
-        "extincteur": "11",
-        "alarme": "12",
-        "plomberie": "13",
-        "peinture": "14",
-        "serrurerie": "15",
-        "chauffage": "16",
-        "électricité": "17",
-        "fenêtres": "18",
-        "clôture": "19",
-        "mobilier": "20",
-        "sol": "21"
+[
+  {
+    "outil": "ordinateur",
+    "symptome": "L’ordinateur ne s’allume pas",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez que le câble d’alimentation est bien branché et que la prise fonctionne.",
+        "2": "Assurez-vous que le bouton d’alimentation est bien pressé.",
+        "3": "Essayez avec un autre câble ou un autre chargeur.",
+        "4": "Si rien ne se passe, le bloc d’alimentation ou la carte mère peut être endommagé."
       },
-      "defaut": "99"
-    },
+      "conclusion": "Consultez un technicien informatique si aucune de ces étapes ne résout le problème."
+    }
+  },
+  {
+    "outil": "ordinateur",
+    "symptome": "L’ordinateur est lent",
+    "reponse": {
+      "etapes": {
+        "1": "Fermez les applications inutiles qui tournent en arrière-plan.",
+        "2": "Lancez un scan antivirus pour vérifier la présence de logiciels malveillants.",
+        "3": "Désinstallez les programmes inutiles.",
+        "4": "Ajoutez de la mémoire RAM si possible ou envisagez un SSD."
+      },
+      "conclusion": "Un entretien régulier et une mise à niveau peuvent améliorer les performances."
+    }
+  },
+  {
+    "outil": "ordinateur",
+    "symptome": "L’écran reste noir au démarrage",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez si l'écran est bien connecté et sous tension.",
+        "2": "Essayez avec un autre écran ou câble vidéo.",
+        "3": "Écoutez si l’ordinateur fait du bruit ou émet des bips.",
+        "4": "Retirez la batterie (si portable), attendez 30 secondes puis redémarrez."
+      },
+      "conclusion": "Si le problème persiste, la carte graphique ou la RAM pourrait être en cause."
+    }
+  },
 
-    "2": {
-      "question": "Pour l'entretien de voiture, souhaitez-vous faire la vidange, le contrôle technique ou la révision ?",
-      "reponses_utilisateur": {
-        "vidange": "22",
-        "contrôle technique": "23",
-        "révision": "24"
-      }
-    },
-
-    "3": {
-      "question": "Pour le climatiseur, voulez-vous un nettoyage des filtres ou une recharge de gaz ?",
-      "reponses_utilisateur": {
-        "nettoyage": "25",
-        "recharge": "26"
-      }
-    },
-
-    "4": {
-      "question": "Pour la chaudière, souhaitez-vous une vérification annuelle ou un détartrage ?",
-      "reponses_utilisateur": {
-        "vérification": "27",
-        "détartrage": "28"
-      }
-    },
-
-    "5": {
-      "question": "Pour la piscine, préférez-vous un nettoyage complet ou un traitement chimique ?",
-      "reponses_utilisateur": {
-        "nettoyage": "29",
-        "traitement": "30"
-      }
-    },
-
-    "6": {
-      "question": "Pour le jardin, voulez-vous une tonte, une taille ou un traitement contre les parasites ?",
-      "reponses_utilisateur": {
-        "tonte": "31",
-        "taille": "32",
-        "traitement": "33"
-      }
-    },
-
-    "7": {
-      "question": "Pour l’ordinateur, s’agit-il d’un nettoyage matériel ou d’une optimisation logicielle ?",
-      "reponses_utilisateur": {
-        "nettoyage": "34",
-        "optimisation": "35"
-      }
-    },
-
-    "8": {
-      "question": "Pour le chauffe-eau, souhaitez-vous une vidange ou une vérification du thermostat ?",
-      "reponses_utilisateur": {
-        "vidange": "36",
-        "thermostat": "37"
-      }
-    },
-
-    "9": {
-      "question": "Pour la toiture, voulez-vous une inspection ou un nettoyage ?",
-      "reponses_utilisateur": {
-        "inspection": "38",
-        "nettoyage": "39"
-      }
-    },
-
-    "10": {
-      "question": "Pour l'ascenseur, souhaitez-vous une maintenance préventive ou une réparation ?",
-      "reponses_utilisateur": {
-        "maintenance": "40",
-        "réparation": "41"
-      }
-    },
-
-    "11": {
-      "question": "Pour l'extincteur, voulez-vous une vérification ou un rechargement ?",
-      "reponses_utilisateur": {
-        "vérification": "42",
-        "rechargement": "43"
-      }
-    },
-
-    "12": {
-      "question": "Pour l'alarme, souhaitez-vous un test de fonctionnement ou une mise à jour ?",
-      "reponses_utilisateur": {
-        "test": "44",
-        "mise à jour": "45"
-      }
-    },
-
-    "13": {
-      "question": "Pour la plomberie, s'agit-il d'une recherche de fuite ou d'un débouchage ?",
-      "reponses_utilisateur": {
-        "fuite": "46",
-        "débouchage": "47"
-      }
-    },
-
-    "14": {
-      "question": "Pour la peinture, voulez-vous un décapage ou une nouvelle couche ?",
-      "reponses_utilisateur": {
-        "décapage": "48",
-        "nouvelle couche": "49"
-      }
-    },
-
-    "15": {
-      "question": "Pour la serrurerie, souhaitez-vous un remplacement ou une réparation de serrure ?",
-      "reponses_utilisateur": {
-        "remplacement": "50",
-        "réparation": "51"
-      }
-    },
-
-    "16": {
-      "question": "Pour le chauffage, voulez-vous un contrôle ou un nettoyage de chaudière ?",
-      "reponses_utilisateur": {
-        "contrôle": "52",
-        "nettoyage": "53"
-      }
-    },
-
-    "17": {
-      "question": "Pour l'électricité, s'agit-il d'une vérification des installations ou d'une réparation ?",
-      "reponses_utilisateur": {
-        "vérification": "54",
-        "réparation": "55"
-      }
-    },
-
-    "18": {
-      "question": "Pour les fenêtres, souhaitez-vous un nettoyage ou un remplacement ?",
-      "reponses_utilisateur": {
-        "nettoyage": "56",
-        "remplacement": "57"
-      }
-    },
-
-    "19": {
-      "question": "Pour la clôture, voulez-vous une réparation ou une peinture ?",
-      "reponses_utilisateur": {
-        "réparation": "58",
-        "peinture": "59"
-      }
-    },
-
-    "20": {
-      "question": "Pour le mobilier, s'agit-il d'une réparation ou d'un entretien de finition ?",
-      "reponses_utilisateur": {
-        "réparation": "60",
-        "entretien": "61"
-      }
-    },
-
-    "21": {
-      "question": "Pour le sol, souhaitez-vous un nettoyage ou un traitement particulier ?",
-      "reponses_utilisateur": {
-        "nettoyage": "62",
-        "traitement": "63"
-      }
-    },
-
-    "22": {
-      "question": "Pour la vidange de voiture, utilisez une huile adaptée à votre moteur et changez le filtre à huile.",
-      "produits_recommandes": ["Huile moteur 5W-40", "Filtre à huile"],
-      "conseils": "Faites la vidange tous les 10 000 km ou selon le manuel du constructeur.",
-      "fin": true
-    },
-
-    "23": {
-      "question": "Le contrôle technique doit être fait tous les 2 ans. Préparez les documents du véhicule avant la visite.",
-      "conseils": "Vérifiez l’éclairage, les freins et les pneus avant le contrôle.",
-      "fin": true
-    },
-
-    "24": {
-      "question": "La révision complète inclut le contrôle moteur, freinage, niveau des liquides et état général.",
-      "conseils": "Faites-la selon le carnet d’entretien de votre voiture.",
-      "fin": true
-    },
-
-    "25": {
-      "question": "Nettoyez les filtres du climatiseur toutes les 3 à 6 mois pour une meilleure efficacité.",
-      "produits_recommandes": ["Nettoyant pour filtres climatiseur"],
-      "conseils": "Portez un masque lors du nettoyage pour éviter les allergies.",
-      "fin": true
-    },
-
-    "26": {
-      "question": "La recharge de gaz doit être faite par un professionnel. Ne tentez pas de le faire vous-même.",
-      "conseils": "Contactez un service agréé pour cette opération.",
-      "fin": true
-    },
-
-    "27": {
-      "question": "La vérification annuelle de la chaudière permet de prévenir les risques d’intoxication et pannes.",
-      "conseils": "Faites appel à un technicien certifié.",
-      "fin": true
-    },
-
-    "28": {
-      "question": "Le détartrage améliore le rendement et prolonge la durée de vie de la chaudière.",
-      "produits_recommandes": ["Détartrant chaudière"],
-      "conseils": "Effectuez-le une fois par an.",
-      "fin": true
-    },
-
-    "29": {
-      "question": "Le nettoyage complet de la piscine inclut la filtration, le brossage des parois et le vidage du skimmer.",
-      "produits_recommandes": ["Produit anti-algues", "Nettoyant piscine"],
-      "conseils": "Faites-le avant la saison estivale.",
-      "fin": true
-    },
-
-    "30": {
-      "question": "Le traitement chimique équilibre le pH et élimine les bactéries.",
-      "produits_recommandes": ["Chlore", "pH+ ou pH-"],
-      "conseils": "Testez l’eau régulièrement.",
-      "fin": true
-    },
-
-    "31": {
-      "question": "La tonte régulière du gazon favorise une pelouse saine.",
-      "produits_recommandes": ["Tondeuse à gazon"],
-      "conseils": "Coupez l’herbe à une hauteur adaptée à la saison.",
-      "fin": true
-    },
-
-    "32": {
-      "question": "La taille des arbustes stimule la croissance et améliore l’esthétique.",
-      "produits_recommandes": ["Sécateur", "Gants de jardinage"],
-      "conseils": "Taillez au début du printemps ou après la floraison.",
-      "fin": true
-    },
-
-    "33": {
-      "question": "Le traitement contre les parasites protège vos plantes des insectes nuisibles.",
-      "produits_recommandes": ["Insecticide bio", "Nématodes"],
-      "conseils": "Appliquez en début de saison.",
-      "fin": true
-    },
-
-    "34": {
-      "question": "Le nettoyage matériel inclut le dépoussiérage, le nettoyage des ventilateurs et ports USB.",
-      "produits_recommandes": ["Air comprimé", "Chiffon microfibre"],
-      "conseils": "Éteignez l’ordinateur avant toute opération.",
-      "fin": true
-    },
-
-    "35": {
-      "question": "L’optimisation logicielle peut inclure la suppression des fichiers temporaires et l’analyse antivirus.",
-      "produits_recommandes": ["CCleaner", "Antivirus à jour"],
-      "conseils": "Faites régulièrement ces opérations pour maintenir la performance.",
-      "fin": true
-    },
-
-    "36": {
-      "question": "La vidange du chauffe-eau élimine les dépôts calcaires.",
-      "conseils": "Faites-la une fois par an.",
-      "fin": true
-    },
-
-    "37": {
-      "question": "La vérification du thermostat assure un bon fonctionnement et économie d’énergie.",
-      "fin": true
-    },
-
-    "38": {
-      "question": "L’inspection toiture détecte les fuites, moisissures ou tuiles cassées.",
-      "conseils": "Faites-la avant la saison des pluies.",
-      "fin": true
-    },
-
-    "39": {
-      "question": "Le nettoyage de toiture retire mousses et débris pour éviter les infiltrations.",
-      "produits_recommandes": ["Produit anti-mousse"],
-      "fin": true
-    },
-
-    "40": {
-      "question": "La maintenance préventive d’ascenseur évite les pannes et garantit la sécurité.",
-      "fin": true
-    },
-
-    "41": {
-      "question": "La réparation d’ascenseur doit être confiée à un professionnel qualifié.",
-      "fin": true
-    },
-
-    "42": {
-      "question": "La vérification de l’extincteur assure son bon fonctionnement en cas d’incendie.",
-      "fin": true
-    },
-
-    "43": {
-      "question": "Le rechargement d’extincteur doit être fait tous les ans ou après usage.",
-      "fin": true
-    },
-
-    "44": {
-      "question": "Le test de fonctionnement de l’alarme est essentiel pour la sécurité.",
-      "fin": true
-    },
-
-    "45": {
-      "question": "La mise à jour de l’alarme améliore les performances et corrige les bugs.",
-      "fin": true
-    },
-
-    "46": {
-      "question": "La recherche de fuite nécessite des outils spécifiques pour localiser la source.",
-      "fin": true
-    },
-
-    "47": {
-      "question": "Le débouchage des canalisations peut se faire avec des produits chimiques ou mécaniques.",
-      "produits_recommandes": ["Déboucheur chimique", "Ventouse"],
-      "fin": true
-    },
-
-    "48": {
-      "question": "Le décapage enlève l’ancienne peinture pour préparer la surface.",
-      "produits_recommandes": ["Décapant peinture"],
-      "fin": true
-    },
-
-    "49": {
-      "question": "Appliquez une nouvelle couche de peinture adaptée au support.",
-      "fin": true
-    },
-
-    "50": {
-      "question": "Le remplacement de serrure améliore la sécurité.",
-      "fin": true
-    },
-
-    "51": {
-      "question": "La réparation de serrure permet de restaurer le bon fonctionnement.",
-      "fin": true
-    },
-
-    "52": {
-      "question": "Le contrôle du chauffage vérifie les performances et sécurité.",
-      "fin": true
-    },
-
-    "53": {
-      "question": "Le nettoyage de chaudière optimise le rendement énergétique.",
-      "fin": true
-    },
-
-    "54": {
-      "question": "La vérification électrique assure la conformité et sécurité des installations.",
-      "fin": true
-    },
-
-    "55": {
-      "question": "La réparation électrique doit être faite par un professionnel qualifié.",
-      "fin": true
-    },
-
-    "56": {
-      "question": "Le nettoyage des fenêtres améliore la luminosité et l’esthétique.",
-      "fin": true
-    },
-
-    "57": {
-      "question": "Le remplacement des fenêtres améliore l’isolation thermique et acoustique.",
-      "fin": true
-    },
-
-    "58": {
-      "question": "La réparation de clôture restaure la sécurité et l’esthétique.",
-      "fin": true
-    },
-
-    "59": {
-      "question": "La peinture de clôture protège contre les intempéries et embellit.",
-      "fin": true
-    },
-
-    "60": {
-      "question": "La réparation de mobilier restaure sa solidité et aspect.",
-      "fin": true
-    },
-
-    "61": {
-      "question": "L’entretien de finition protège et embellit le mobilier.",
-      "fin": true
-    },
-
-    "62": {
-      "question": "Le nettoyage du sol élimine saletés et taches.",
-      "fin": true
-    },
-
-    "63": {
-      "question": "Le traitement du sol protège la surface et prolonge sa durée de vie.",
-      "fin": true
-    },
-
-    "99": {
-      "question": "Je n’ai pas reconnu ce type d’entretien. Pouvez-vous préciser ?",
-      "reponses_utilisateur": {}
+  {
+    "outil": "voiture",
+    "symptome": "Le moteur ne démarre pas",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez que la batterie est chargée.",
+        "2": "Contrôlez les câbles de batterie et les connexions.",
+        "3": "Essayez de démarrer avec des câbles de démarrage.",
+        "4": "Si le moteur ne tourne toujours pas, le démarreur peut être défectueux."
+      },
+      "conclusion": "Contactez un garagiste si le problème persiste."
+    }
+  },
+  {
+    "outil": "voiture",
+    "symptome": "Les freins crissent",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez l’état des plaquettes de frein.",
+        "2": "Nettoyez les disques si sales ou rouillés.",
+        "3": "Assurez-vous qu’il n’y a pas de corps étrangers entre la plaquette et le disque."
+      },
+      "conclusion": "Faites vérifier les freins par un professionnel pour votre sécurité."
+    }
+  },
+  {
+    "outil": "climatiseur",
+    "symptome": "L’air n’est pas froid",
+    "reponse": {
+      "etapes": {
+        "1": "Nettoyez ou remplacez les filtres.",
+        "2": "Vérifiez le niveau de gaz réfrigérant.",
+        "3": "Assurez-vous que les unités intérieure et extérieure ne sont pas obstruées."
+      },
+      "conclusion": "Faites appel à un technicien pour une recharge de gaz ou une maintenance approfondie."
+    }
+  },
+  {
+    "outil": "climatiseur",
+    "symptome": "Le climatiseur fait du bruit",
+    "reponse": {
+      "etapes": {
+        "1": "Inspectez les ventilateurs pour voir s’ils sont bloqués.",
+        "2": "Vérifiez les fixations et supports.",
+        "3": "Nettoyez les filtres et les grilles."
+      },
+      "conclusion": "Si le bruit persiste, contactez un spécialiste."
+    }
+  },
+  {
+    "outil": "chaudière",
+    "symptome": "La chaudière ne chauffe plus",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez que l’alimentation électrique est active.",
+        "2": "Contrôlez la pression d’eau dans le circuit.",
+        "3": "Purge des radiateurs pour éliminer l’air."
+      },
+      "conclusion": "Appelez un chauffagiste si la chaudière reste inopérante."
+    }
+  },
+  {
+    "outil": "chaudière",
+    "symptome": "La chaudière fuit",
+    "reponse": {
+      "etapes": {
+        "1": "Repérez la source de la fuite (raccords, joints, vase d’expansion).",
+        "2": "Serrez les raccords si nécessaire.",
+        "3": "Remplacez les joints abîmés."
+      },
+      "conclusion": "Contactez un professionnel si la fuite est importante."
+    }
+  },
+  {
+    "outil": "piscine",
+    "symptome": "L’eau est trouble",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez le système de filtration.",
+        "2": "Contrôlez et ajustez le pH de l’eau.",
+        "3": "Ajoutez un clarifiant si besoin."
+      },
+      "conclusion": "Effectuez un traitement régulier pour éviter la formation d’algues."
+    }
+  },
+  {
+    "outil": "piscine",
+    "symptome": "Présence d’algues vertes",
+    "reponse": {
+      "etapes": {
+        "1": "Brossez les parois et le fond.",
+        "2": "Traitez avec un produit anti-algues adapté.",
+        "3": "Maintenez une bonne circulation de l’eau."
+      },
+      "conclusion": "Prévenez les algues en entretenant régulièrement la piscine."
+    }
+  },
+  {
+    "outil": "jardin",
+    "symptome": "Les feuilles jaunissent",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez l’arrosage : ni trop ni trop peu.",
+        "2": "Contrôlez la qualité du sol et fertilisez si nécessaire.",
+        "3": "Inspectez les parasites ou maladies."
+      },
+      "conclusion": "Appliquez un traitement spécifique selon le diagnostic."
+    }
+  },
+  {
+    "outil": "jardin",
+    "symptome": "Présence de parasites",
+    "reponse": {
+      "etapes": {
+        "1": "Identifiez le type de parasite.",
+        "2": "Utilisez un insecticide ou un traitement biologique adapté.",
+        "3": "Renforcez la santé des plantes par un bon entretien."
+      },
+      "conclusion": "Répétez le traitement selon les recommandations."
+    }
+  },
+  {
+    "outil": "ordinateur",
+    "symptome": "L’ordinateur ne s’allume pas",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez que le câble d’alimentation est bien branché et que la prise fonctionne.",
+        "2": "Assurez-vous que le bouton d’alimentation est bien pressé.",
+        "3": "Essayez avec un autre câble ou un autre chargeur.",
+        "4": "Si rien ne se passe, le bloc d’alimentation ou la carte mère peut être endommagé."
+      },
+      "conclusion": "Consultez un technicien informatique si aucune de ces étapes ne résout le problème."
+    }
+  },
+  {
+    "outil": "ordinateur",
+    "symptome": "L’ordinateur est lent",
+    "reponse": {
+      "etapes": {
+        "1": "Fermez les applications inutiles qui tournent en arrière-plan.",
+        "2": "Lancez un scan antivirus pour vérifier la présence de logiciels malveillants.",
+        "3": "Désinstallez les programmes inutiles.",
+        "4": "Ajoutez de la mémoire RAM si possible ou envisagez un SSD."
+      },
+      "conclusion": "Un entretien régulier et une mise à niveau peuvent améliorer les performances."
+    }
+  },
+  {
+    "outil": "ordinateur",
+    "symptome": "L’écran reste noir au démarrage",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez si l'écran est bien connecté et sous tension.",
+        "2": "Essayez avec un autre écran ou câble vidéo.",
+        "3": "Écoutez si l’ordinateur fait du bruit ou émet des bips.",
+        "4": "Retirez la batterie (si portable), attendez 30 secondes puis redémarrez."
+      },
+      "conclusion": "Si le problème persiste, la carte graphique ou la RAM pourrait être en cause."
+    }
+  },
+  {
+    "outil": "chauffe-eau",
+    "symptome": "Pas d’eau chaude",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez que le chauffe-eau est alimenté en électricité ou gaz.",
+        "2": "Contrôlez le thermostat et réglez-le.",
+        "3": "Purge du chauffe-eau pour éliminer l’air et les dépôts."
+      },
+      "conclusion": "Faites appel à un professionnel si l’eau ne chauffe toujours pas."
+    }
+  },
+  {
+    "outil": "chauffe-eau",
+    "symptome": "Fuite d’eau au niveau du chauffe-eau",
+    "reponse": {
+      "etapes": {
+        "1": "Identifiez la source de la fuite.",
+        "2": "Serrez les raccords ou remplacez les joints.",
+        "3": "Videz le chauffe-eau si nécessaire."
+      },
+      "conclusion": "Contactez un spécialiste si la fuite persiste."
+    }
+  },
+  {
+    "outil": "toiture",
+    "symptome": "Fuite d’eau dans la toiture",
+    "reponse": {
+      "etapes": {
+        "1": "Inspectez les tuiles cassées ou déplacées.",
+        "2": "Vérifiez les joints et solins.",
+        "3": "Réparez ou remplacez les éléments défectueux."
+      },
+      "conclusion": "Si nécessaire, faites intervenir un couvreur professionnel."
+    }
+  },
+  {
+    "outil": "toiture",
+    "symptome": "Présence de mousses ou lichens",
+    "reponse": {
+      "etapes": {
+        "1": "Nettoyez la toiture avec un produit anti-mousse.",
+        "2": "Rincez abondamment après application.",
+        "3": "Inspectez régulièrement pour prévenir leur réapparition."
+      },
+      "conclusion": "Un entretien régulier prolonge la durée de vie de la toiture."
+    }
+  },
+  {
+    "outil": "ascenseur",
+    "symptome": "L’ascenseur ne répond pas aux commandes",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez l’alimentation électrique de l’ascenseur.",
+        "2": "Inspectez les boutons et panneaux de commande.",
+        "3": "Redémarrez le système si possible."
+      },
+      "conclusion": "Faites appel à un technicien spécialisé en ascenseurs."
+    }
+  },
+  {
+    "outil": "ascenseur",
+    "symptome": "Bruits inhabituels lors du fonctionnement",
+    "reponse": {
+      "etapes": {
+        "1": "Lubrifiez les parties mobiles selon les recommandations.",
+        "2": "Vérifiez l’état des câbles et poulies.",
+        "3": "Faites une maintenance préventive régulière."
+      },
+      "conclusion": "Consultez un professionnel en cas de doute."
+    }
+  },
+  {
+    "outil": "extincteur",
+    "symptome": "L’extincteur ne fonctionne pas",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez la pression indiquée sur le manomètre.",
+        "2": "Assurez-vous que la goupille est en place.",
+        "3": "Contrôlez la date de péremption de l’extincteur."
+      },
+      "conclusion": "Faites recharger ou remplacer l’extincteur si nécessaire."
+    }
+  },
+  {
+    "outil": "extincteur",
+    "symptome": "L’extincteur fuit",
+    "reponse": {
+      "etapes": {
+        "1": "Inspectez le corps de l’extincteur pour des fissures.",
+        "2": "Vérifiez les joints et soupapes.",
+        "3": "Ne pas utiliser un extincteur endommagé."
+      },
+      "conclusion": "Contactez un spécialiste pour une réparation ou un remplacement."
+    }
+  },
+  {
+    "outil": "alarme",
+    "symptome": "L’alarme ne se déclenche pas",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez les piles ou l’alimentation électrique.",
+        "2": "Testez les détecteurs et capteurs.",
+        "3": "Réinitialisez le système si possible."
+      },
+      "conclusion": "Faites vérifier le système par un technicien en sécurité."
+    }
+  },
+  {
+    "outil": "alarme",
+    "symptome": "L’alarme sonne sans raison",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez la présence d’objets ou animaux proches des détecteurs.",
+        "2": "Testez les capteurs pour déceler un défaut.",
+        "3": "Effectuez une mise à jour logicielle si disponible."
+      },
+      "conclusion": "Contactez un professionnel si le problème persiste."
+    }
+  },
+  {
+    "outil": "plomberie",
+    "symptome": "Fuite d’eau sous l’évier",
+    "reponse": {
+      "etapes": {
+        "1": "Serrez les raccords et écrous.",
+        "2": "Remplacez les joints usés.",
+        "3": "Vérifiez l’état des tuyaux."
+      },
+      "conclusion": "Faites appel à un plombier en cas de fuite importante."
+    }
+  },
+  {
+    "outil": "plomberie",
+    "symptome": "Canalisations bouchées",
+    "reponse": {
+      "etapes": {
+        "1": "Utilisez une ventouse pour déboucher.",
+        "2": "Essayez un déboucheur chimique adapté.",
+        "3": "Démontez et nettoyez le siphon si nécessaire."
+      },
+      "conclusion": "Contactez un professionnel pour un débouchage profond."
+    }
+  },
+  {
+    "outil": "peinture",
+    "symptome": "Peinture qui s’écaille",
+    "reponse": {
+      "etapes": {
+        "1": "Enlevez les parties détachées.",
+        "2": "Poncez la surface avant de repeindre.",
+        "3": "Appliquez un primaire adapté."
+      },
+      "conclusion": "Respectez les temps de séchage pour un bon résultat."
+    }
+  },
+  {
+    "outil": "peinture",
+    "symptome": "Couleur terne ou irrégulière",
+    "reponse": {
+      "etapes": {
+        "1": "Nettoyez bien la surface avant peinture.",
+        "2": "Utilisez une peinture de qualité adaptée au support.",
+        "3": "Appliquez plusieurs couches fines."
+      },
+      "conclusion": "Un bon matériel garantit une meilleure finition."
+    }
+  },
+  {
+    "outil": "serrurerie",
+    "symptome": "La serrure est bloquée",
+    "reponse": {
+      "etapes": {
+        "1": "Lubrifiez la serrure avec un produit adapté.",
+        "2": "Vérifiez qu’aucun corps étranger ne gêne le mécanisme.",
+        "3": "Essayez d’actionner la clé doucement."
+      },
+      "conclusion": "Contactez un serrurier si le problème persiste."
+    }
+  },
+  {
+    "outil": "serrurerie",
+    "symptome": "La clé tourne dans le vide",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez si la clé est endommagée.",
+        "2": "Contrôlez que la serrure n’est pas cassée à l’intérieur.",
+        "3": "Ne forcez pas la clé pour éviter la casse."
+      },
+      "conclusion": "Faites appel à un professionnel pour réparation ou remplacement."
+    }
+  },
+  {
+    "outil": "chauffage",
+    "symptome": "Le chauffage ne chauffe pas",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez l’alimentation électrique et les réglages du thermostat.",
+        "2": "Purge des radiateurs pour éliminer l’air.",
+        "3": "Contrôlez la chaudière et les brûleurs."
+      },
+      "conclusion": "Faites appel à un chauffagiste si nécessaire."
+    }
+  },
+  {
+    "outil": "chauffage",
+    "symptome": "Radiateurs froids en haut",
+    "reponse": {
+      "etapes": {
+        "1": "Purge des radiateurs pour évacuer l’air.",
+        "2": "Vérifiez la pression dans le circuit de chauffage.",
+        "3": "Nettoyez ou remplacez les vannes."
+      },
+      "conclusion": "Un entretien régulier évite ces problèmes."
+    }
+  },
+  {
+    "outil": "électricité",
+    "symptome": "Disjoncteur qui saute fréquemment",
+    "reponse": {
+      "etapes": {
+        "1": "Ne surchargez pas les prises électriques.",
+        "2": "Vérifiez l’état des appareils branchés.",
+        "3": "Faites contrôler l’installation électrique."
+      },
+      "conclusion": "Contactez un électricien pour une vérification complète."
+    }
+  },
+  {
+    "outil": "électricité",
+    "symptome": "Prise ou interrupteur qui ne fonctionne plus",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez le disjoncteur et le fusible associé.",
+        "2": "Contrôlez le câblage et les connexions.",
+        "3": "Remplacez la prise ou l’interrupteur si défectueux."
+      },
+      "conclusion": "Faites appel à un professionnel en cas de doute."
+    }
+  },
+  {
+    "outil": "fenêtres",
+    "symptome": "Fenêtre difficile à ouvrir ou fermer",
+    "reponse": {
+      "etapes": {
+        "1": "Vérifiez que les rails ou charnières ne sont pas obstrués.",
+        "2": "Lubrifiez les mécanismes avec un produit adapté.",
+        "3": "Réajustez la fenêtre si nécessaire."
+      },
+      "conclusion": "Contactez un spécialiste en menuiserie si besoin."
+    }
+  },
+  {
+    "outil": "fenêtres",
+    "symptome": "Fuite d’air ou d’eau par la fenêtre",
+    "reponse": {
+      "etapes": {
+        "1": "Contrôlez l’état des joints d’étanchéité.",
+        "2": "Remplacez les joints abîmés.",
+        "3": "Vérifiez la pose et le calfeutrage."
+      },
+      "conclusion": "Une bonne isolation améliore le confort et réduit les coûts."
+    }
+  },
+  {
+    "outil": "clôture",
+    "symptome": "Clôture endommagée ou cassée",
+    "reponse": {
+      "etapes": {
+        "1": "Réparez les parties cassées avec des matériaux adaptés.",
+        "2": "Renforcez les fixations et poteaux.",
+        "3": "Remplacez les éléments trop abîmés."
+      },
+      "conclusion": "Une clôture sécurisée protège votre propriété."
+    }
+  },
+  {
+    "outil": "clôture",
+    "symptome": "Peinture qui s’écaille sur la clôture",
+    "reponse": {
+      "etapes": {
+        "1": "Enlevez la peinture abîmée.",
+        "2": "Poncez la surface et appliquez un primaire.",
+        "3": "Peignez avec une peinture adaptée aux extérieurs."
+      },
+      "conclusion": "Un entretien régulier prolonge la durée de vie."
+    }
+  },
+  {
+    "outil": "mobilier",
+    "symptome": "Mobilier rayé ou abîmé",
+    "reponse": {
+      "etapes": {
+        "1": "Nettoyez la surface avec un chiffon doux.",
+        "2": "Utilisez un produit de réparation ou de polissage adapté.",
+        "3": "Pour les cas graves, envisagez un ponçage et une nouvelle finition."
+      },
+      "conclusion": "Prenez soin de votre mobilier pour préserver son aspect."
+    }
+  },
+  {
+    "outil": "mobilier",
+    "symptome": "Mobilier instable",
+    "reponse": {
+      "etapes": {
+        "1": "Serrez toutes les vis et fixations.",
+        "2": "Remplacez les pièces cassées ou usées.",
+        "3": "Équilibrez le mobilier si nécessaire."
+      },
+      "conclusion": "Un mobilier stable garantit sécurité et confort."
+    }
+  },
+  {
+    "outil": "sol",
+    "symptome": "Sol taché",
+    "reponse": {
+      "etapes": {
+        "1": "Nettoyez avec un produit adapté au type de sol.",
+        "2": "Pour les taches tenaces, utilisez un détachant spécialisé.",
+        "3": "Rincez soigneusement après nettoyage."
+      },
+      "conclusion": "Entretenez régulièrement votre sol pour préserver son aspect."
+    }
+  },
+  {
+    "outil": "sol",
+    "symptome": "Sol abîmé ou fissuré",
+    "reponse": {
+      "etapes": {
+        "1": "Inspectez la cause des fissures (humidité, mouvement).",
+        "2": "Reboucher les fissures avec un produit adapté.",
+        "3": "Envisagez une rénovation ou un remplacement si nécessaire."
+      },
+      "conclusion": "Une bonne réparation prolonge la durée de vie du sol."
     }
   }
-}
+]
