@@ -1,100 +1,116 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>{% block title %}Serveur Robot{% endblock %}</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <title>{% block title %}Bosseurs - Admin{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
   <style>
     body {
-      margin: 0;
-      padding-top: 56px;
-      padding-bottom: 50px;
-      background-color: #f9fafb;
-      color: #1f2937;
+      background-color: #f8f9fa;
       font-family: 'Segoe UI', sans-serif;
     }
-
-    .navbar {
+    .sidebar {
+      width: 240px;
+      height: 100vh;
       position: fixed;
       top: 0;
-      width: 100%;
-      z-index: 1050;
+      left: 0;
       background-color: #ffffff;
-      border-bottom: 1px solid #e5e7eb;
-      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+      border-right: 1px solid #dee2e6;
+      padding-top: 60px;
     }
-
-    .navbar-brand {
-      color: #4f46e5;
-      font-weight: bold;
+    .sidebar .nav-link {
+      color: #333;
+      padding: 10px 20px;
+      font-weight: 500;
     }
-
-    .navbar-nav .nav-link {
-      color: #374151;
+    .sidebar .nav-link.active {
+      background-color: #e9ecef;
+      border-left: 4px solid #0d6efd;
+      color: #0d6efd;
     }
-
-    .navbar-nav .nav-link:hover {
-      color: #4f46e5;
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+      min-height: 100vh;
     }
-
-    .bottombar {
+    .topbar {
+      height: 60px;
+      width: 100%;
       position: fixed;
-      bottom: 0;
-      width: 100%;
-      z-index: 1050;
+      top: 0;
+      left: 0;
       background-color: #ffffff;
-      border-top: 1px solid #e5e7eb;
-      padding: 8px 16px;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #6b7280;
+      border-bottom: 1px solid #dee2e6;
+      z-index: 1000;
+      padding: 0 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
-
-    main {
-      min-height: calc(100vh - 106px);
+    .topbar h5 {
+      margin: 0;
+      font-weight: bold;
+      color: #0d6efd;
+    }
+    .topbar a {
+      color: #0d6efd;
+      font-weight: 500;
+      text-decoration: none;
     }
   </style>
+  {% block head %}{% endblock %}
 </head>
 <body>
 
-<!-- ✅ Topbar -->
-<nav class="navbar navbar-expand-lg navbar-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">🤖 BosseurBot</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav gap-3">
-        {% if current_user.is_authenticated %}
-          <li class="nav-item">
-            <a class="nav-link" href="#"><i class="bi bi-person-circle"></i> {{ current_user.username }}</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-danger" href="{{ url_for('logout') }}"><i class="bi bi-box-arrow-right"></i> Déconnexion</a>
-          </li>
-        {% else %}
-          <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('login') }}"><i class="bi bi-box-arrow-in-right"></i> Connexion</a>
-          </li>
-        {% endif %}
-      </ul>
+  <div class="topbar">
+    <h5><i class="bi bi-cpu me-2"></i>Bosseurs Admin</h5>
+    <div>
+      {% if current_user.is_authenticated %}
+        <span class="me-3">Bonjour, {{ current_user.username }}</span>
+        <a href="{{ url_for('logout') }}"><i class="bi bi-box-arrow-right"></i> Déconnexion</a>
+      {% endif %}
     </div>
   </div>
-</nav>
 
-<main>
-  {% block content %}{% endblock %}
-</main>
+  <div class="sidebar">
+    <ul class="nav flex-column">
+      <li class="nav-item">
+        <a class="nav-link {% if active_page == 'dashboard' %}active{% endif %}" href="{{ url_for('dashboard') }}">
+          <i class="bi bi-bar-chart"></i> Dashboard
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if active_page == 'users' %}active{% endif %}" href="{{ url_for('users') }}">
+          <i class="bi bi-people"></i> Utilisateurs
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link {% if active_page == 'chat' %}active{% endif %}" href="{{ url_for('chat') }}">
+          <i class="bi bi-chat-left-text"></i> Chat
+        </a>
+      </li>
+    </ul>
+  </div>
 
-<!-- ✅ Bottombar -->
-<div class="bottombar">
-  &copy; {{ current_year or "2025" }} Bosseurs AI - Tous droits réservés.
-</div>
+  <div class="content">
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
 
-<script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+    {% block content %}{% endblock %}
+  </div>
+
+  <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js') }}"></script>
+  {% block scripts %}{% endblock %}
 </body>
 </html>

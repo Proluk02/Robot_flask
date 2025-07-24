@@ -2,51 +2,51 @@
 {% block title %}Bosseurs - Chat{% endblock %}
 
 {% block content %}
-<div class="container py-4">
-  <div class="card shadow-sm border-0">
+<div class="container py-3">
+  <div class="card shadow-sm border-0" style="border-radius: 1rem; background-color: #fff;">
 
     <!-- En-tête du chat -->
-    <div class="card-header bg-light d-flex justify-content-between align-items-center flex-wrap">
-      <h5 class="mb-0 fw-bold"><i class="bi bi-robot me-2"></i>Assistant Intelligent</h5>
-      <div class="d-flex align-items-center flex-wrap">
-        <span class="badge bg-primary text-uppercase me-3">
+    <div class="card-header bg-light d-flex justify-content-between align-items-center flex-wrap" style="border-radius: 1rem 1rem 0 0;">
+      <h5 class="mb-0 fw-bold text-primary"><i class="bi bi-robot me-2"></i>Assistant Intelligent</h5>
+      <div class="d-flex align-items-center flex-wrap gap-2">
+        <span class="badge bg-primary text-white px-3 py-2 fs-6">
           {{ session.get('domaine', 'Non défini') }}
         </span>
         <form action="{{ url_for('nouveau_chat') }}" method="post" class="d-inline me-2">
-          <button type="submit" class="btn btn-sm btn-outline-danger" title="Nouveau chat">
+          <button type="submit" class="btn btn-outline-danger btn-sm" title="Nouveau chat" style="min-width: 130px;">
             <i class="bi bi-arrow-clockwise"></i> Nouveau chat
           </button>
         </form>
-        <a href="{{ url_for('refresh') }}" class="btn btn-sm btn-outline-secondary me-2" title="Refresh">
+        <a href="{{ url_for('refresh') }}" class="btn btn-outline-secondary btn-sm me-2" title="Refresh" style="min-width: 100px;">
           <i class="bi bi-arrow-repeat"></i> Refresh
         </a>
-        <a href="{{ url_for('changer_domaine') }}" class="btn btn-sm btn-outline-warning" title="Changer de domaine">
+        <a href="{{ url_for('changer_domaine') }}" class="btn btn-outline-warning btn-sm" title="Changer de domaine" style="min-width: 150px;">
           <i class="bi bi-arrow-left-circle"></i> Changer domaine
         </a>
       </div>
     </div>
 
     <!-- Corps du chat -->
-    <div class="card-body bg-white" style="max-height: 60vh; overflow-y: auto;" id="chat-box">
+    <div class="card-body bg-white text-dark" id="chat-box" style="max-height: 60vh; overflow-y: auto; scrollbar-width: thin; scrollbar-color: #adb5bd transparent;">
       {% for message in messages %}
         <div class="mb-3">
           {% if message.sender == 'client' %}
             <div class="text-end">
-              <div class="d-inline-block bg-primary text-white p-2 rounded-pill px-3 shadow-sm">
+              <div class="d-inline-block bg-primary text-white p-2 rounded-pill px-3 shadow-sm" style="box-shadow: 0 0 6px rgba(13, 110, 253, 0.4); max-width: 75%;">
                 {{ message.content }}
               </div>
             </div>
           {% elif message.sender == 'robot' %}
             <div class="text-start">
-              <div class="d-inline-block bg-light border p-3 rounded shadow-sm">
+              <div class="d-inline-block bg-light border p-3 rounded shadow-sm" style="max-width: 85%;">
                 {% if message.content is mapping and message.content.etapes %}
-                  <ul class="mb-1 ps-3">
+                  <ul class="mb-1 ps-3" style="color: #495057;">
                     {% for key, etape in message.content.etapes.items() %}
                       <li><strong>Étape {{ key }} :</strong> {{ etape }}</li>
                     {% endfor %}
                   </ul>
                   {% if message.content.conclusion %}
-                    <p class="mb-0"><em>{{ message.content.conclusion }}</em></p>
+                    <p class="mb-0 fst-italic text-muted">{{ message.content.conclusion }}</p>
                   {% endif %}
                 {% else %}
                   <p class="mb-0">{{ message.content }}</p>
@@ -58,22 +58,106 @@
       {% endfor %}
     </div>
 
-    <!-- Formulaire d'envoi -->
-    <div class="card-footer bg-white border-top">
-      <form method="post" class="d-flex">
-        <input type="text" name="message" class="form-control me-2 rounded-pill shadow-sm" placeholder="Écrivez votre message..." required autofocus>
-        <button type="submit" class="btn btn-success rounded-pill px-4 shadow-sm">
-          <i class="bi bi-send-fill"></i> Envoyer
-        </button>
-      </form>
-    </div>
-
   </div>
 </div>
 
+<!-- Formulaire d'envoi fixé en bas -->
+<form method="post" class="chat-input-form d-flex align-items-center" onsubmit="return sendMessage();">
+  <input
+    type="text"
+    name="message"
+    class="form-control"
+    placeholder="Écrivez votre message..."
+    required
+    autocomplete="off"
+    id="message-input"
+  />
+  <button type="submit" class="btn btn-primary ms-2" aria-label="Envoyer le message">
+    <i class="bi bi-send-fill"></i>
+  </button>
+</form>
+
+<style>
+  .chat-input-form {
+    position: fixed;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0.6rem 1rem;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 -3px 6px rgba(0, 0, 0, 0.12);
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+    z-index: 1100;
+  }
+
+  .chat-input-form .form-control {
+    flex-grow: 1;
+    height: 38px;
+    border-radius: 22px;
+    border: 1.4px solid #ced4da;
+    padding: 0 1.4rem;
+    background-color: #fefefe;
+    color: #2c2f33;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+  }
+
+  .chat-input-form .form-control::placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
+  .chat-input-form .form-control:focus {
+    background-color: #fff;
+    border-color: #3a76f0;
+    outline: none;
+    box-shadow: 0 0 10px #3a76f0aa;
+    color: #2c2f33;
+  }
+
+  .chat-input-form .btn {
+    min-width: 44px;
+    height: 38px;
+    border-radius: 50%;
+    background: #3a76f0;
+    border: none;
+    color: #fff;
+    font-size: 1.3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 3px 8px #2c5adfbb;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .chat-input-form .btn:hover,
+  .chat-input-form .btn:focus {
+    background-color: #2c5adf;
+    box-shadow: 0 5px 12px #2c5adfdd;
+    outline: none;
+  }
+</style>
+
 <script>
-  // Scroll automatique en bas
   const chatBox = document.getElementById('chat-box');
   chatBox.scrollTop = chatBox.scrollHeight;
+
+  document.getElementById('message-input').focus();
+
+  function sendMessage() {
+    const input = document.getElementById('message-input');
+    if (!input.value.trim()) {
+      return false;
+    }
+    return true;
+  }
 </script>
 {% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Modifier utilisateur{% endblock %}
+
+{% block content %}
+<div class="container py-4">
+  <div class="card shadow-sm rounded-4">
+    <div class="card-header bg-white border-bottom-0">
+      <h5 class="fw-bold mb-0">Modifier l'utilisateur</h5>
+    </div>
+    <div class="card-body">
+      <form method="POST">
+        <div class="mb-3">
+          <label class="form-label">Nom d'utilisateur</label>
+          <input type="text" name="username" class="form-control" value="{{ user.username }}" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" value="{{ user.email }}" required>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Rôle</label>
+          <select name="role" class="form-select">
+            <option value="client" {% if user.role == 'client' %}selected{% endif %}>Client</option>
+            <option value="admin" {% if user.role == 'admin' %}selected{% endif %}>Admin</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-success">Enregistrer</button>
+        <a href="{{ url_for('users') }}" class="btn btn-secondary">Annuler</a>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

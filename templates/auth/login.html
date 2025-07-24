@@ -2,44 +2,90 @@
 {% block title %}Connexion{% endblock %}
 
 {% block content %}
-<div class="container d-flex align-items-center justify-content-center min-vh-100">
-  <div class="col-md-6 col-lg-5">
-    <div class="card shadow-lg border-0 rounded-4 p-4">
+<div class="container d-flex align-items-center justify-content-center min-vh-100 px-3">
+  <div class="col-12 col-sm-8 col-md-6 col-lg-5">
+    <div class="card shadow-lg border-0 rounded-4 p-4" style="background-color: #f5f7fa;">
       <div class="card-body">
-        <h3 class="text-center mb-4">
-          <i class="bi bi-shield-lock-fill text-primary me-2"></i>Connexion
+        <h3 class="text-center mb-4 text-primary fw-bold">
+          <i class="bi bi-shield-lock-fill me-2"></i>Connexion
         </h3>
 
         {% with messages = get_flashed_messages(with_categories=true) %}
-          {% for category, message in messages %}
-            <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
-              {{ message }}
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          {% if messages %}
+            <div class="mb-3">
+              {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                  {{ message }}
+                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fermer"></button>
+                </div>
+              {% endfor %}
             </div>
-          {% endfor %}
+          {% endif %}
         {% endwith %}
 
         <form method="POST" class="needs-validation" novalidate>
-          <div class="form-floating mb-3">
-            <input type="email" name="email" class="form-control" id="email" placeholder="name@example.com" required>
-            <label for="email">Adresse Email</label>
-          </div>
-
           <div class="form-floating mb-4">
-            <input type="password" name="password" class="form-control" id="password" placeholder="Mot de passe" required>
-            <label for="password">Mot de passe</label>
+            <input
+              type="email"
+              name="email"
+              class="form-control shadow-sm"
+              id="email"
+              placeholder="name@example.com"
+              required
+              style="background-color: #fff; border-radius: 0.5rem; border: 1px solid #ced4da; transition: border-color 0.3s, box-shadow 0.3s;"
+              onfocus="this.style.borderColor='#4f46e5'; this.style.boxShadow='0 0 8px rgba(79,70,229,0.5)'"
+              onblur="this.style.borderColor='#ced4da'; this.style.boxShadow='none'"
+            >
+            <label for="email" class="ps-3" style="color: #495057;">Adresse Email</label>
+            <div class="invalid-feedback ps-3">Veuillez entrer une adresse email valide.</div>
           </div>
 
-          <button type="submit" class="btn btn-primary w-100 py-2 rounded-3">
-            <i class="bi bi-box-arrow-in-right me-1"></i> Se connecter
+          <div class="form-floating mb-5">
+            <input
+              type="password"
+              name="password"
+              class="form-control shadow-sm"
+              id="password"
+              placeholder="Mot de passe"
+              required
+              style="background-color: #fff; border-radius: 0.5rem; border: 1px solid #ced4da; transition: border-color 0.3s, box-shadow 0.3s;"
+              onfocus="this.style.borderColor='#4f46e5'; this.style.boxShadow='0 0 8px rgba(79,70,229,0.5)'"
+              onblur="this.style.borderColor='#ced4da'; this.style.boxShadow='none'"
+            >
+            <label for="password" class="ps-3" style="color: #495057;">Mot de passe</label>
+            <div class="invalid-feedback ps-3">Veuillez entrer votre mot de passe.</div>
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary w-100 py-2 rounded-3 shadow-sm fw-semibold fs-5"
+          >
+            <i class="bi bi-box-arrow-in-right me-2"></i> Se connecter
           </button>
         </form>
 
-        <p class="mt-4 mb-0 text-center">
-          Pas encore inscrit ? <a href="{{ url_for('register') }}" class="text-decoration-none fw-semibold">Créer un compte</a>
+        <p class="mt-4 mb-0 text-center text-secondary" style="font-size: 0.9rem;">
+          Pas encore inscrit ? <a href="{{ url_for('register') }}" class="text-decoration-none fw-semibold text-primary">Créer un compte</a>
         </p>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+  // Validation Bootstrap (simple)
+  (() => {
+    'use strict';
+    const forms = document.querySelectorAll('.needs-validation');
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+        form.classList.add('was-validated');
+      }, false);
+    });
+  })();
+</script>
 {% endblock %}
